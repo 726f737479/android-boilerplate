@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidBoilerplateJava</string>
+    <string name="shared_element">sharedElement</string>
+
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>

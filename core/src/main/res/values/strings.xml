@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Core</string>
+    <string name="shared_element">sharedElement</string>
+</resources>
