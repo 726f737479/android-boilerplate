@@ -1,0 +1,43 @@
+<template format="4"
+	revision="1"
+	minApi="9"
+    	minBuildApi="14"
+	name="MVP Activity"
+	description="Creates a new MVP classes - Presenter, View, Component and Contract between the two">
+ 
+    	<formfactor value="Mobile" />
+
+	<category value="Brainbaenapps MVP"/>
+ 
+    	<parameter 
+		id="className"
+            	name="Activity Name"
+            	type="string"
+            	constraints="class|unique|nonempty"
+            	default="Main"
+            	help="The name of the functionality that requires MVP views"/>
+
+	<parameter 
+		id="appName"
+            	name="Application Name"
+            	type="string"
+            	constraints="class|unique|nonempty"
+            	default="myapp"
+            	help="The name of the application that requires MVP views"/>
+
+	<parameter
+            id="isLauncher"
+            name="Launcher Activity"
+            type="boolean"
+            default="false"
+            help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible 	in the launcher"/>
+
+
+	<thumbs>
+        	<thumb>template_blank_activity.png</thumb>
+	</thumbs>
+
+	<globals file="globals.xml.ftl" />
+    	<execute file="recipe.xml.ftl" />
+ 
+</template>

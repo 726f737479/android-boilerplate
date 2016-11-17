@@ -1,0 +1,27 @@
+<template format="4"
+		revision="1"
+		name="MVP Fragment"
+		description="Creates a new MVP classes - Presenter, View, Component and Contract between the two">
+ 
+		<category value="Brainbaenapps MVP"/>
+ 
+	<parameter id="className"
+		name="Fragment Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="Default"
+		help="The name of the functionality that requires MVP views"/>
+
+<parameter
+        id="appName"
+        name="myapp"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Application"
+        help="The name of the Application that used for Component" />
+
+ 
+	<globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>

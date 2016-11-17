@@ -1,0 +1,36 @@
+<template format="4"
+		revision="1"
+		name="MVP Adapter"
+		description="Creates a new list adapter">
+ 
+		<category value="Brainbaenapps MVP"/>
+ 
+	<parameter id="className"
+		name="Adapter Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="ItemsAdapter"
+		help="The name of the adapter to use"/>
+
+	<parameter
+		id="dataPackageName"
+		name="Package name"
+		type="string"
+		constraints="package|nonempty|exists"
+		default="com.mycompany.myapp"
+		help="The package in which model will be stored" />
+
+
+	<parameter
+		id="dataClassName"
+		name="Class for Item"
+		type="string"
+		constraints="class|nonempty|exists"
+		default="TestItem"
+		help="The name of model that is used as item in adapter" />
+
+ 
+	<globals file="globals.xml.ftl" />
+    	<execute file="recipe.xml.ftl" />
+ 
+</template>
