@@ -59,6 +59,9 @@ public class UserResponse implements BaseResponse {
     @SerializedName("created_at")
     @Expose private String createdAt;
 
+    @SerializedName("is_saved")
+    @Expose private boolean isSaved;
+
     public UserResponse() {
     }
 
@@ -135,5 +138,13 @@ public class UserResponse implements BaseResponse {
 
     public String getCreatedAt() {
         return createdAt;
+    }
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public void setSaved(boolean saved) {
+        isSaved = saved;
     }
 }

@@ -48,8 +48,8 @@
             android:layout_gravity="bottom"
             app:itemBackground="@color/colorPrimary"
             app:layout_behavior=".ui.main.BottomNavigationBehavior"
-            app:itemIconTint="@drawable/bottom_page_item_selector"
-            app:itemTextColor="@drawable/bottom_page_item_selector"
+            app:itemIconTint="@drawable/selector_btn_page_item"
+            app:itemTextColor="@drawable/selector_btn_page_item"
             app:menu="@menu/bottom_navigation_main" />
 
     </android.support.design.widget.CoordinatorLayout>

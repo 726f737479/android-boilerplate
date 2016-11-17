@@ -9,79 +9,88 @@
                 type="com.brainbeanapps.android_boilerplate.data.remote.model.UserResponse"/>
     </data>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp">
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:orientation="horizontal">
 
-        <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+        <android.support.v4.widget.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:imageUrl="@{userResponse.avatarUrl}"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
                 android:id="@+id/userAvatar"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
                 android:scaleType="centerInside"
-                tools:src="@mipmap/ic_launcher"/>
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                tools:src="@drawable/ic_tag_faces"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right"
+                android:orientation="vertical">
+
+            <TextView
+                    android:text="@{userResponse.login}"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="rostdev"/>
+
+            <TextView
+                    android:text="@{userResponse.htmlUrl}"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_text"
+                    tools:text="http://github/ghfhfgh/hjfjfj"/>
+
+            <TextView
+                    android:text="@{userResponse.bio}"
+                    android:layout_width="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="2dp"
+                    tools:text="Hello mu name is Trolololorgf dfsgdfg fdgdfgfdg"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+              android:layout_height="@dimen/divider"
+              android:layout_marginLeft="@dimen/margin_left"
+              android:layout_gravity="bottom"
+              android:background="#ebebeb"/>
 
         <TextView
-                android:text="@{userResponse.login}"
-                android:maxLines="1"
-                style="@style/TextAppearance.AppCompat.Subhead"
+                android:text="@{userResponse.followers}"
                 android:layout_width="wrap_content"
+                style="@style/TextAppearance.AppCompat.Caption"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="56dp"
-                android:layout_marginRight="56dp"
-                android:id="@+id/textView4"
-                android:layout_alignTop="@+id/imageView4"
-                android:layout_toRightOf="@+id/userAvatar"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                tools:text="rostdev"/>
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_margin="@dimen/margin"
+                android:layout_gravity="top|right"
+                tools:text="12hr"/>
 
-        <TextView
-                android:text="@{userResponse.htmlUrl}"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:maxLines="1"
+        <android.support.v7.widget.AppCompatRadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="56dp"
-                android:layout_marginRight="56dp"
-                android:layout_below="@+id/textView4"
-                android:layout_alignLeft="@+id/textView4"
-                android:layout_alignStart="@+id/textView4"
-                android:id="@+id/textView5"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                tools:text="http://github/ghfhfgh/hjfjfj"/>
-        <TextView
-                android:text="@{userResponse.createdAt}"
-                android:layout_width="wrap_content"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView5"
-                android:layout_alignLeft="@+id/textView5"
-                android:layout_alignStart="@+id/textView5"
-                android:id="@+id/textView6"
-                android:layout_alignRight="@+id/textView5"
-                android:layout_alignEnd="@+id/textView5"
-                tools:text="06.06.2006"/>
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_star"
-                android:layout_marginRight="10dp"
-                android:layout_marginEnd="10dp"
-                android:id="@+id/imageView4"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
-    </RelativeLayout>
+                android:checked="@{userResponse.saved}"
+                android:button="@drawable/selector_btn_star"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_gravity="bottom|right"
+                android:id="@+id/appCompatRadioButton"/>
+
+    </FrameLayout>
 
 </layout>
