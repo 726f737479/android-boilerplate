@@ -14,13 +14,14 @@
             android:layout_height="88dp"
             android:orientation="horizontal">
 
-        <android.support.v4.widget.CircleImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <ImageView
+                android:layout_width="@dimen/ic_medium"
+                android:layout_height="@dimen/ic_medium"
                 app:imageUrl="@{userResponse.avatarUrl}"
                 android:id="@+id/userAvatar"
                 android:scaleType="centerInside"
                 android:layout_marginLeft="@dimen/margin"
+                android:layout_marginStart="@dimen/margin"
                 android:layout_marginTop="@dimen/margin"
                 tools:src="@drawable/ic_tag_faces"/>
 
@@ -29,7 +30,9 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginStart="@dimen/margin_left"
                 android:layout_marginRight="@dimen/margin_right"
+                android:layout_marginEnd="@dimen/margin_right"
                 android:orientation="vertical">
 
             <TextView
@@ -66,21 +69,22 @@
         <View android:layout_width="match_parent"
               android:layout_height="@dimen/divider"
               android:layout_marginLeft="@dimen/margin_left"
+              android:layout_marginStart="@dimen/margin_left"
               android:layout_gravity="bottom"
               android:background="#ebebeb"/>
 
         <TextView
-                android:text="@{userResponse.followers}"
+                android:text='@{Integer.toString(userResponse.followers)+"f"}'
                 android:layout_width="wrap_content"
                 style="@style/TextAppearance.AppCompat.Caption"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:layout_margin="@dimen/margin"
-                android:layout_gravity="top|right"
-                tools:text="12hr"/>
+                android:layout_gravity="top|end"
+                tools:text="12f"/>
 
-        <android.support.v7.widget.AppCompatRadioButton
+        <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="@{userResponse.saved}"
@@ -88,7 +92,7 @@
                 android:layout_marginRight="@dimen/margin"
                 android:layout_marginEnd="@dimen/margin"
                 android:layout_marginBottom="@dimen/margin"
-                android:layout_gravity="bottom|right"
+                android:layout_gravity="bottom|end"
                 android:id="@+id/appCompatRadioButton"/>
 
     </FrameLayout>
